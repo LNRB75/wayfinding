@@ -22,16 +22,20 @@ button.danger{color:#b00;background:#fff7f7;border-color:#e3baba}
 #viewport{position:relative}
 #plan-image{
   background-image:url("../assets/plan.png");
-  background-size:contain;
+  /* ⛔ on abandonne contain */
+  /* background-size:contain; */
+
+  /* ✅ on force un mappage 1:1 entre conteneur et image */
+  background-size: 100% 100%;
   background-repeat:no-repeat;
   background-position:top left;
 
-  /* ✅ AJOUTS POUR FORCER L’AFFICHAGE */
-  min-height: 600px;         /* force une hauteur visible */
-  display: block;            /* évite qu’un héritage display:none bloque */
-  background-color: #fff;    /* pour voir la zone, même sans image */
-  outline: 1px dashed #aaa;  /* cadre de debug (tu pourras le retirer) */
+  /* Tu peux garder le cadre de debug si utile, sinon retire-le */
+  /* outline: 1px dashed #aaa; */
 
+  /* ⛔ supprime les hauteurs forcées dans le CSS pour ce bloc
+     (min-height: 600px, display:block, background-color, etc.)
+     On va piloter proprement la hauteur par le ratio (padding-top) via JS */
 }
 
 /* ✅ Conteneur commun qui recevra le transform (zoom/pan) */
