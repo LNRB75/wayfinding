@@ -145,7 +145,51 @@ function loadGraph(data){
   PLAN_H = (data.meta&&data.meta.planH) || 0;
   mPerUnit = (data.meta && typeof data.meta.scale_m_per_unit==='number' && isFinite(data.meta.scale_m_per_unit) && data.meta.scale_m_per_unit>0) ? data.meta.scale_m_per_unit : null;
   scaleLabelEl.textContent = mPerUnit ? `Échelle : 1 unité plan = ${mPerUnit.toFixed(4)} m` : 'Échelle : —';
-  drawPoints(); drawEdges(); drawPath([]); refreshSelectOptions(); updateRoutePanel(null); initBackgroundDimensions();
+  drawPoints(); drawEdges(); drawPath([]); refreshSelectOptions(); updateRoutePanel(null);// === Initialisation image de fond ===
+function initBackgroundDimensions(){
+  const img = new Image();
+  img.onload = () => {
+    const realW = img.naturalWidth;
+    const realH = img.naturalHeight;
+
+    // Si le JSON contient des dimensions différentes, on ajuste les coordonnées
+    const metaW = PLAN_W || realW;
+    const metaH = PLAN_H || realH;
+
+    if (realW > 0 && realH > 0) {
+      // 1) Met à jour les dimensions "plan" en s'alignant sur l'image réelle
+      const needRescale = (metaW !== realW) || (metaH !== realH);
+      const scaleX = needRescale ? (realW / metaW) : 1;
+      const scaleY = needRescale ? (realH / metaH) : 1;
+
+      if (needRescale) {
+        // 2) Mise à l’échelle proportionnelle des coordonnées des points
+        nodes = nodes.map(n => ({
+          ...n,
+          x: Math.round(n.x * scaleX),
+          y: Math.round(n.y * scaleY)
+        }));
+        // Les arêtes utilisent les ids de points, donc rien à changer
+        drawPoints();    // redessine avec les nouvelles coordonnées
+        drawEdges();
+        drawPath([]);    // on efface un éventuel chemin dessiné
+        refreshSelectOptions();
+      }
+
+      // 3) Mémorise les vraies dimensions et ajuste le ratio d’affichage
+      PLAN_W = realW;
+      PLAN_H = realH;
+      // Ratio exact du plan pour que le calque SVG colle pixel-près
+      planImage.style.paddingTop = (PLAN_H / PLAN_W * 100) + '%';
+
+      applyCamera();
+    } else {
+      console.warn('Dimensions image non valides, conserver valeurs existantes.');
+    }
+  };
+  img.src = 'assets/plan.png';
+}
+``;
 }
 
 // === Initialisation image de fond ===
