@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'wayfinding-cache-v2';
+const CACHE_NAME = 'wayfinding-cache-v3';
 const PRECACHE_URLS = [
   './',
   './index.html',
