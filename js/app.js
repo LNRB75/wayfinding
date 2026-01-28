@@ -195,8 +195,36 @@ function initBackgroundDimensions(){
 // === Initialisation image de fond ===
 function initBackgroundDimensions(){
   const img = new Image();
-  img.onload = ()=>{ PLAN_W = PLAN_W || img.naturalWidth; PLAN_H = PLAN_H || img.naturalHeight; planImage.style.paddingTop = (PLAN_H/PLAN_W*100)+'%'; applyCamera(); };
-   img.src = 'assets/plan.png';
+  img.onload = () => {
+    const realW = img.naturalWidth;
+    const realH = img.naturalHeight;
+
+    const metaW = PLAN_W || realW;
+    const metaH = PLAN_H || realH;
+
+    // (recalage optionnel si meta != real — tu peux garder le bloc si tu l’as)
+    const needRescale = (metaW !== realW) || (metaH !== realH);
+    const scaleX = needRescale ? (realW / metaW) : 1;
+    const scaleY = needRescale ? (realH / metaH) : 1;
+    if (needRescale) {
+      nodes = nodes.map(n => ({...n, x: Math.round(n.x * scaleX), y: Math.round(n.y * scaleY)}));
+      drawPoints(); drawEdges(); drawPath([]); refreshSelectOptions();
+    }
+
+    // ✅ Dimensions réelles du plan
+    PLAN_W = realW;
+    PLAN_H = realH;
+
+    // ✅ Ratio d’affichage (pilote la hauteur du fond)
+    planImage.style.paddingTop = (PLAN_H / PLAN_W * 100) + '%';
+
+    // ✅ ViewBox en concordance 1:1 avec l’image
+    svg.setAttribute('viewBox', `0 0 ${PLAN_W} ${PLAN_H}`);
+    svg.setAttribute('preserveAspectRatio', 'xMinYMin meet');
+
+    applyCamera();
+  };
+  img.src = 'assets/plan.png';
 }
 
 // === Boot ===
