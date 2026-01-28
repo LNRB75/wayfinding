@@ -192,40 +192,56 @@ function initBackgroundDimensions(){
 ``;
 }
 
-// === Initialisation image de fond ===
+
+// === Initialisation image de fond (version SVG <image>) ===
 function initBackgroundDimensions(){
   const img = new Image();
   img.onload = () => {
     const realW = img.naturalWidth;
     const realH = img.naturalHeight;
 
+    // Dimensions "mémorisées" dans le JSON (si présentes)
     const metaW = PLAN_W || realW;
     const metaH = PLAN_H || realH;
 
-    // (recalage optionnel si meta != real — tu peux garder le bloc si tu l’as)
+    // Si les dimensions mémorisées != réelles, on met à l’échelle les points
     const needRescale = (metaW !== realW) || (metaH !== realH);
-    const scaleX = needRescale ? (realW / metaW) : 1;
-    const scaleY = needRescale ? (realH / metaH) : 1;
     if (needRescale) {
-      nodes = nodes.map(n => ({...n, x: Math.round(n.x * scaleX), y: Math.round(n.y * scaleY)}));
-      drawPoints(); drawEdges(); drawPath([]); refreshSelectOptions();
+      const scaleX = realW / metaW;
+      const scaleY = realH / metaH;
+      nodes = nodes.map(n => ({
+        ...n,
+        x: Math.round(n.x * scaleX),
+        y: Math.round(n.y * scaleY)
+      }));
     }
 
-    // ✅ Dimensions réelles du plan
+    // On fige les dimensions du plan sur les dimensions réelles
     PLAN_W = realW;
     PLAN_H = realH;
 
-    // ✅ Ratio d’affichage (pilote la hauteur du fond)
-    planImage.style.paddingTop = (PLAN_H / PLAN_W * 100) + '%';
-
-    // ✅ ViewBox en concordance 1:1 avec l’image
+    // Le SVG partagé par tout : même coordonnée que l'image
     svg.setAttribute('viewBox', `0 0 ${PLAN_W} ${PLAN_H}`);
+    // "meet" garde le ratio, "none" ferait du stretching ; ici, comme l'image est en width/height 100% avec preserveAspectRatio="none",
+    // le viewBox assure une correspondance parfaite des coords.
     svg.setAttribute('preserveAspectRatio', 'xMinYMin meet');
 
+    // On donne l'aspect ratio au conteneur (#camera) pour que le SVG occupe exactement la même surface
+    // (c'est notre "hauteur" fluide, au lieu de min-height/height forcés).
+    const camera = document.getElementById('camera');
+    camera.style.position = 'relative'; // par sécurité
+    camera.style.paddingTop = (PLAN_H / PLAN_W * 100) + '%';
+
+    // Redessine avec les coords possiblement rescalées
+    drawPoints();
+    drawEdges();
+    drawPath([]);
+    refreshSelectOptions();
     applyCamera();
   };
   img.src = 'assets/plan.png';
 }
+
 
 // === Boot ===
 (function init(){ setEditMode(false); autoLoadGraph(); })();
