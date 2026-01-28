@@ -145,53 +145,8 @@ function loadGraph(data){
   PLAN_H = (data.meta&&data.meta.planH) || 0;
   mPerUnit = (data.meta && typeof data.meta.scale_m_per_unit==='number' && isFinite(data.meta.scale_m_per_unit) && data.meta.scale_m_per_unit>0) ? data.meta.scale_m_per_unit : null;
   scaleLabelEl.textContent = mPerUnit ? `Échelle : 1 unité plan = ${mPerUnit.toFixed(4)} m` : 'Échelle : —';
-  drawPoints(); drawEdges(); drawPath([]); refreshSelectOptions(); updateRoutePanel(null);// === Initialisation image de fond ===
-function initBackgroundDimensions(){
-  const img = new Image();
-  img.onload = () => {
-    const realW = img.naturalWidth;
-    const realH = img.naturalHeight;
-
-    // Si le JSON contient des dimensions différentes, on ajuste les coordonnées
-    const metaW = PLAN_W || realW;
-    const metaH = PLAN_H || realH;
-
-    if (realW > 0 && realH > 0) {
-      // 1) Met à jour les dimensions "plan" en s'alignant sur l'image réelle
-      const needRescale = (metaW !== realW) || (metaH !== realH);
-      const scaleX = needRescale ? (realW / metaW) : 1;
-      const scaleY = needRescale ? (realH / metaH) : 1;
-
-      if (needRescale) {
-        // 2) Mise à l’échelle proportionnelle des coordonnées des points
-        nodes = nodes.map(n => ({
-          ...n,
-          x: Math.round(n.x * scaleX),
-          y: Math.round(n.y * scaleY)
-        }));
-        // Les arêtes utilisent les ids de points, donc rien à changer
-        drawPoints();    // redessine avec les nouvelles coordonnées
-        drawEdges();
-        drawPath([]);    // on efface un éventuel chemin dessiné
-        refreshSelectOptions();
-      }
-
-      // 3) Mémorise les vraies dimensions et ajuste le ratio d’affichage
-      PLAN_W = realW;
-      PLAN_H = realH;
-      // Ratio exact du plan pour que le calque SVG colle pixel-près
-      planImage.style.paddingTop = (PLAN_H / PLAN_W * 100) + '%';
-
-      applyCamera();
-    } else {
-      console.warn('Dimensions image non valides, conserver valeurs existantes.');
-    }
-  };
-  img.src = 'assets/plan.png';
+  drawPoints(); drawEdges(); drawPath([]); refreshSelectOptions(); updateRoutePanel(null); initBackgroundDimensions();
 }
-``;
-}
-
 
 // === Initialisation image de fond (version SVG <image>) ===
 function initBackgroundDimensions(){
@@ -200,11 +155,10 @@ function initBackgroundDimensions(){
     const realW = img.naturalWidth;
     const realH = img.naturalHeight;
 
-    // Dimensions "mémorisées" dans le JSON (si présentes)
     const metaW = PLAN_W || realW;
     const metaH = PLAN_H || realH;
 
-    // Si les dimensions mémorisées != réelles, on met à l’échelle les points
+    // Si le JSON mémorise des dimensions différentes, on rescale les points
     const needRescale = (metaW !== realW) || (metaH !== realH);
     if (needRescale) {
       const scaleX = realW / metaW;
@@ -216,23 +170,30 @@ function initBackgroundDimensions(){
       }));
     }
 
-    // On fige les dimensions du plan sur les dimensions réelles
+    // Dimensions finales = dimensions réelles du plan
     PLAN_W = realW;
     PLAN_H = realH;
 
-    // Le SVG partagé par tout : même coordonnée que l'image
+    // ✅ ViewBox du SVG aligné 1:1 sur l'image
     svg.setAttribute('viewBox', `0 0 ${PLAN_W} ${PLAN_H}`);
-    // "meet" garde le ratio, "none" ferait du stretching ; ici, comme l'image est en width/height 100% avec preserveAspectRatio="none",
-    // le viewBox assure une correspondance parfaite des coords.
     svg.setAttribute('preserveAspectRatio', 'xMinYMin meet');
 
-    // On donne l'aspect ratio au conteneur (#camera) pour que le SVG occupe exactement la même surface
-    // (c'est notre "hauteur" fluide, au lieu de min-height/height forcés).
-    const camera = document.getElementById('camera');
-    camera.style.position = 'relative'; // par sécurité
-    camera.style.paddingTop = (PLAN_H / PLAN_W * 100) + '%';
+    // ✅ Met le bon ratio de surface au conteneur (#camera)
+    const cameraEl = document.getElementById('camera');
+    cameraEl.style.paddingTop = (PLAN_H / PLAN_W * 100) + '%';
 
-    // Redessine avec les coords possiblement rescalées
+    // ✅ Configure la balise <image> en coordonnées réelles
+    const imgEl = document.getElementById('plan-bg');
+    if (imgEl) {
+      // largeur/hauteur en unités du viewBox (coordonnées du plan)
+      imgEl.setAttribute('width', PLAN_W);
+      imgEl.setAttribute('height', PLAN_H);
+      // compatibilité large (Safari iOS) : href + xlink:href
+      imgEl.setAttribute('href', 'assets/plan.png');
+      imgEl.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', 'assets/plan.png');
+    }
+
+    // Redessine avec coords possiblement rescalées
     drawPoints();
     drawEdges();
     drawPath([]);
@@ -241,7 +202,6 @@ function initBackgroundDimensions(){
   };
   img.src = 'assets/plan.png';
 }
-
 
 // === Boot ===
 (function init(){ setEditMode(false); autoLoadGraph(); })();
