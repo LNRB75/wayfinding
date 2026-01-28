@@ -64,3 +64,12 @@ button.danger{color:#b00;background:#fff7f7;border-color:#e3baba}
 .grabbing{cursor:grabbing}
 .mode-badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;border:1px solid #e6e6e6;background:#f9f9f9}
 .mode-badge.edit{background:#fff4e6;border-color:#ffd6a6}
+
+* On masque l'ancien fond pour ne pas le superposer au SVG */
+#plan-image {
+  display: none !important;
+
+}
+``
+
+
