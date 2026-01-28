@@ -15,8 +15,7 @@
   /* === OVERRIDE DEBUG POUR FORCER L'AFFICHAGE DU FOND === */
   #plan-image {
     /* le chemin est déjà bon côté CSS: ../assets/plan.png ; on force la taille visible */
-    min-height: 70vh;            /* force une grande zone visible */
-    height: calc(100vh - 180px); /* réglage pragmatique: plein écran moins l'en-tête */
+ 
     display: block;
     background-color: #fff;      /* pour voir la zone même sans image */
     outline: 1px dashed #aaa;    /* cadre de debug (tu pourras le retirer) */
@@ -106,6 +105,7 @@
             <div id="camera">
               <div id="plan-image"></div>
               <svg id="scene">
+<image id="bg-image" href="assets/plan.png" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none"></image>
                 <g id="edges-layer"></g>
                 <g id="path-layer"></g>
                 <g id="points-layer"></g>
