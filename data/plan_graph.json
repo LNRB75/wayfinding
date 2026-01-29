@@ -1,484 +1,151 @@
 {
   "nodes": [
     {
-      "id": "entree_principale",
-      "name": "Entrée principale",
-      "x": 43,
-      "y": 631
+      "id": "point_1",
+      "name": "point_1",
+      "x": 49,
+      "y": 262
     },
     {
-      "id": "entree_bureaux_cbc",
-      "name": "Entrée bureaux CBC",
-      "x": 120,
-      "y": 596
+      "id": "point_2",
+      "name": "point_2",
+      "x": 135,
+      "y": 283
     },
     {
-      "id": "entree_bureaux_cot_moa",
-      "name": "Entrée bureaux COT / MOA",
-      "x": 390,
-      "y": 643
+      "id": "point_3",
+      "name": "point_3",
+      "x": 155,
+      "y": 296
     },
     {
-      "id": "acces_r_1",
-      "name": "Accès R+1",
-      "x": 330,
-      "y": 656
+      "id": "point_4",
+      "name": "point_4",
+      "x": 160,
+      "y": 272
     },
     {
-      "id": "acces_sous_sol",
-      "name": "Accès sous-sol",
-      "x": 365,
-      "y": 667
+      "id": "point_5",
+      "name": "point_5",
+      "x": 150,
+      "y": 322
     },
     {
-      "id": "entree_bureaux_moe",
-      "name": "Entrée bureaux MOE",
-      "x": 400,
-      "y": 767
+      "id": "point_6",
+      "name": "point_6",
+      "x": 197,
+      "y": 314
     },
     {
-      "id": "entree_salle_prepa_patients",
-      "name": "Entrée salle prépa patients",
-      "x": 600,
-      "y": 367
+      "id": "point_7",
+      "name": "point_7",
+      "x": 197,
+      "y": 454
     },
     {
-      "id": "entree_hall_module_4",
-      "name": "Entrée hall module 4",
-      "x": 738,
-      "y": 375
+      "id": "point_8",
+      "name": "point_8",
+      "x": 236,
+      "y": 452
     },
     {
-      "id": "entree_halls_module_2_et_3",
-      "name": "Entrée halls module 2 et 3",
-      "x": 987,
-      "y": 523
+      "id": "point_9",
+      "name": "point_9",
+      "x": 196,
+      "y": 530
     },
     {
-      "id": "entree_zone_imagerie",
-      "name": "Entrée zone imagerie",
-      "x": 705,
-      "y": 641
+      "id": "point_10",
+      "name": "point_10",
+      "x": 235,
+      "y": 539
     },
     {
-      "id": "entree_zone_bop_2",
-      "name": "Entrée zone BOP 2",
-      "x": 858,
-      "y": 872
+      "id": "point_11",
+      "name": "point_11",
+      "x": 296,
+      "y": 539
     },
     {
-      "id": "entree_zone_vestiaires",
-      "name": "Entrée zone vestiaires",
-      "x": 702,
-      "y": 880
+      "id": "point_12",
+      "name": "point_12",
+      "x": 297,
+      "y": 567
     },
     {
-      "id": "entree_salle_de_reveil",
-      "name": "Entrée salle de réveil",
-      "x": 710,
-      "y": 1269
+      "id": "point_13",
+      "name": "point_13",
+      "x": 379,
+      "y": 566
     },
     {
-      "id": "entree_salles_de_naissance",
-      "name": "Entrée salles de naissance",
-      "x": 712,
-      "y": 1313
+      "id": "point_14",
+      "name": "point_14",
+      "x": 298,
+      "y": 362
     },
     {
-      "id": "entree_hall_module_1",
-      "name": "Entrée hall module 1",
-      "x": 933,
-      "y": 1329
+      "id": "point_15",
+      "name": "point_15",
+      "x": 296,
+      "y": 303
     },
     {
       "id": "point_16",
       "name": "point_16",
-      "x": 126,
-      "y": 639
+      "x": 331,
+      "y": 323
     },
     {
       "id": "point_17",
       "name": "point_17",
-      "x": 326,
-      "y": 697
+      "x": 234,
+      "y": 294
     },
     {
       "id": "point_18",
       "name": "point_18",
-      "x": 366,
-      "y": 709
+      "x": 333,
+      "y": 294
     },
     {
       "id": "point_19",
       "name": "point_19",
-      "x": 390,
-      "y": 675
+      "x": 304,
+      "y": 258
     },
     {
       "id": "point_20",
       "name": "point_20",
-      "x": 393,
-      "y": 721
+      "x": 307,
+      "y": 219
     },
     {
-      "id": "point_21",
-      "name": "point_21",
-      "x": 370,
-      "y": 762
+      "id": "bureau_cbc",
+      "name": "Bureau CBC",
+      "x": 51,
+      "y": 229
     },
     {
-      "id": "point_22",
-      "name": "point_22",
-      "x": 476,
-      "y": 764
+      "id": "entree_principale",
+      "name": "Entrée principale",
+      "x": 17,
+      "y": 276
     },
     {
-      "id": "point_23",
-      "name": "point_23",
-      "x": 560,
-      "y": 757
+      "id": "acces_etages",
+      "name": "Acces etages",
+      "x": 137,
+      "y": 260
     },
     {
-      "id": "point_24",
-      "name": "point_24",
-      "x": 562,
-      "y": 710
-    },
-    {
-      "id": "point_25",
-      "name": "point_25",
-      "x": 704,
-      "y": 698
-    },
-    {
-      "id": "point_26",
-      "name": "point_26",
-      "x": 705,
-      "y": 727
-    },
-    {
-      "id": "point_27",
-      "name": "point_27",
-      "x": 471,
-      "y": 1092
-    },
-    {
-      "id": "point_28",
-      "name": "point_28",
-      "x": 565,
-      "y": 1087
-    },
-    {
-      "id": "point_29",
-      "name": "point_29",
-      "x": 477,
-      "y": 1288
-    },
-    {
-      "id": "point_30",
-      "name": "point_30",
-      "x": 564,
-      "y": 1301
-    },
-    {
-      "id": "point_31",
-      "name": "point_31",
-      "x": 710,
-      "y": 1375
-    },
-    {
-      "id": "point_32",
-      "name": "point_32",
-      "x": 914,
-      "y": 1370
-    },
-    {
-      "id": "homme_cles",
-      "name": "Homme clés",
-      "x": 432,
-      "y": 1288
-    },
-    {
-      "id": "lifts",
-      "name": "Lifts",
-      "x": 798,
-      "y": 714
-    },
-    {
-      "id": "point_35",
-      "name": "point_35",
-      "x": 750,
-      "y": 1339
-    },
-    {
-      "id": "point_36",
-      "name": "point_36",
-      "x": 1064,
-      "y": 815
-    },
-    {
-      "id": "point_37",
-      "name": "point_37",
-      "x": 1021,
-      "y": 293
-    },
-    {
-      "id": "point_38",
-      "name": "point_38",
-      "x": 743,
-      "y": 627
-    },
-    {
-      "id": "point_39",
-      "name": "point_39",
-      "x": 741,
-      "y": 524
-    },
-    {
-      "id": "point_40",
-      "name": "point_40",
-      "x": 381,
-      "y": 606
-    },
-    {
-      "id": "point_41",
-      "name": "point_41",
-      "x": 368,
-      "y": 557
-    },
-    {
-      "id": "point_42",
-      "name": "point_42",
-      "x": 392,
-      "y": 463
-    },
-    {
-      "id": "point_43",
-      "name": "point_43",
-      "x": 338,
-      "y": 457
-    },
-    {
-      "id": "point_44",
-      "name": "point_44",
-      "x": 315,
-      "y": 373
-    },
-    {
-      "id": "point_45",
-      "name": "point_45",
-      "x": 561,
-      "y": 306
-    },
-    {
-      "id": "point_46",
-      "name": "point_46",
-      "x": 579,
-      "y": 376
-    },
-    {
-      "id": "point_47",
-      "name": "point_47",
-      "x": 778,
-      "y": 627
-    },
-    {
-      "id": "point_48",
-      "name": "point_48",
-      "x": 721,
-      "y": 863
-    },
-    {
-      "id": "point_49",
-      "name": "point_49",
-      "x": 457,
-      "y": 1027
-    },
-    {
-      "id": "point_50",
-      "name": "point_50",
-      "x": 484,
-      "y": 1029
+      "id": "entree_imagerie",
+      "name": "Entree imagerie",
+      "x": 292,
+      "y": 279
     }
   ],
-  "edges": [
-    {
-      "from": "entree_principale",
-      "to": "point_16"
-    },
-    {
-      "from": "point_16",
-      "to": "entree_bureaux_cbc"
-    },
-    {
-      "from": "point_16",
-      "to": "point_17"
-    },
-    {
-      "from": "point_17",
-      "to": "acces_r_1"
-    },
-    {
-      "from": "point_17",
-      "to": "point_18"
-    },
-    {
-      "from": "point_18",
-      "to": "point_20"
-    },
-    {
-      "from": "point_20",
-      "to": "point_19"
-    },
-    {
-      "from": "point_19",
-      "to": "acces_sous_sol"
-    },
-    {
-      "from": "point_19",
-      "to": "entree_bureaux_cot_moa"
-    },
-    {
-      "from": "point_18",
-      "to": "point_21"
-    },
-    {
-      "from": "point_21",
-      "to": "entree_bureaux_moe"
-    },
-    {
-      "from": "point_21",
-      "to": "point_22"
-    },
-    {
-      "from": "point_22",
-      "to": "point_23"
-    },
-    {
-      "from": "point_23",
-      "to": "point_24"
-    },
-    {
-      "from": "point_24",
-      "to": "point_25"
-    },
-    {
-      "from": "point_25",
-      "to": "entree_zone_imagerie"
-    },
-    {
-      "from": "point_25",
-      "to": "point_26"
-    },
-    {
-      "from": "point_26",
-      "to": "entree_zone_vestiaires"
-    },
-    {
-      "from": "point_23",
-      "to": "point_28"
-    },
-    {
-      "from": "point_28",
-      "to": "point_27"
-    },
-    {
-      "from": "point_22",
-      "to": "point_27"
-    },
-    {
-      "from": "entree_zone_imagerie",
-      "to": "point_38"
-    },
-    {
-      "from": "point_38",
-      "to": "point_39"
-    },
-    {
-      "from": "point_39",
-      "to": "entree_halls_module_2_et_3"
-    },
-    {
-      "from": "point_39",
-      "to": "entree_hall_module_4"
-    },
-    {
-      "from": "entree_bureaux_cot_moa",
-      "to": "point_40"
-    },
-    {
-      "from": "point_41",
-      "to": "point_42"
-    },
-    {
-      "from": "point_43",
-      "to": "point_42"
-    },
-    {
-      "from": "point_43",
-      "to": "point_44"
-    },
-    {
-      "from": "point_44",
-      "to": "point_45"
-    },
-    {
-      "from": "point_45",
-      "to": "point_46"
-    },
-    {
-      "from": "point_46",
-      "to": "entree_salle_prepa_patients"
-    },
-    {
-      "from": "point_41",
-      "to": "point_40"
-    },
-    {
-      "from": "point_26",
-      "to": "point_48"
-    },
-    {
-      "from": "point_48",
-      "to": "entree_zone_bop_2"
-    },
-    {
-      "from": "point_28",
-      "to": "point_30"
-    },
-    {
-      "from": "point_27",
-      "to": "point_29"
-    },
-    {
-      "from": "point_29",
-      "to": "homme_cles"
-    },
-    {
-      "from": "point_30",
-      "to": "entree_salles_de_naissance"
-    },
-    {
-      "from": "entree_salles_de_naissance",
-      "to": "entree_salle_de_reveil"
-    },
-    {
-      "from": "entree_salles_de_naissance",
-      "to": "point_31"
-    },
-    {
-      "from": "point_31",
-      "to": "point_32"
-    },
-    {
-      "from": "point_32",
-      "to": "entree_hall_module_1"
-    },
-    {
-      "from": "point_49",
-      "to": "point_50"
-    }
-  ],
+  "edges": [],
   "meta": {
     "planW": 577,
     "planH": 623,
