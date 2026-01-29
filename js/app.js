@@ -148,59 +148,11 @@ function loadGraph(data){
   drawPoints(); drawEdges(); drawPath([]); refreshSelectOptions(); updateRoutePanel(null); initBackgroundDimensions();
 }
 
-// === Initialisation image de fond (version SVG <image>) ===
+// === Initialisation image de fond ===
 function initBackgroundDimensions(){
   const img = new Image();
-  img.onload = () => {
-    const realW = img.naturalWidth;
-    const realH = img.naturalHeight;
-
-    const metaW = PLAN_W || realW;
-    const metaH = PLAN_H || realH;
-
-    // Si le JSON mémorise des dimensions différentes, on rescale les points
-    const needRescale = (metaW !== realW) || (metaH !== realH);
-    if (needRescale) {
-      const scaleX = realW / metaW;
-      const scaleY = realH / metaH;
-      nodes = nodes.map(n => ({
-        ...n,
-        x: Math.round(n.x * scaleX),
-        y: Math.round(n.y * scaleY)
-      }));
-    }
-
-    // Dimensions finales = dimensions réelles du plan
-    PLAN_W = realW;
-    PLAN_H = realH;
-
-    // ✅ ViewBox du SVG aligné 1:1 sur l'image
-    svg.setAttribute('viewBox', `0 0 ${PLAN_W} ${PLAN_H}`);
-    svg.setAttribute('preserveAspectRatio', 'xMinYMin meet');
-
-    // ✅ Met le bon ratio de surface au conteneur (#camera)
-    const cameraEl = document.getElementById('camera');
-    cameraEl.style.paddingTop = (PLAN_H / PLAN_W * 100) + '%';
-
-    // ✅ Configure la balise <image> en coordonnées réelles
-    const imgEl = document.getElementById('plan-bg');
-    if (imgEl) {
-      // largeur/hauteur en unités du viewBox (coordonnées du plan)
-      imgEl.setAttribute('width', PLAN_W);
-      imgEl.setAttribute('height', PLAN_H);
-      // compatibilité large (Safari iOS) : href + xlink:href
-      imgEl.setAttribute('href', 'assets/plan.png');
-      imgEl.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', 'assets/plan.png');
-    }
-
-    // Redessine avec coords possiblement rescalées
-    drawPoints();
-    drawEdges();
-    drawPath([]);
-    refreshSelectOptions();
-    applyCamera();
-  };
-  img.src = 'assets/plan.png';
+  img.onload = ()=>{ PLAN_W = PLAN_W || img.naturalWidth; PLAN_H = PLAN_H || img.naturalHeight; planImage.style.paddingTop = (PLAN_H/PLAN_W*100)+'%'; applyCamera(); };
+   img.src = 'assets/plan.png';
 }
 
 // === Boot ===
