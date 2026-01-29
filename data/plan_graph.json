@@ -143,12 +143,121 @@
       "name": "Entree imagerie",
       "x": 292,
       "y": 279
+    },
+    {
+      "id": "entree_module_2",
+      "name": "Entree module 2",
+      "x": 408,
+      "y": 215
+    },
+    {
+      "id": "entree_module_1",
+      "name": "Entrée module 1",
+      "x": 390,
+      "y": 546
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "from": "entree_principale",
+      "to": "point_1"
+    },
+    {
+      "from": "point_1",
+      "to": "bureau_cbc"
+    },
+    {
+      "from": "point_1",
+      "to": "point_2"
+    },
+    {
+      "from": "point_2",
+      "to": "acces_etages"
+    },
+    {
+      "from": "point_2",
+      "to": "point_3"
+    },
+    {
+      "from": "point_3",
+      "to": "point_5"
+    },
+    {
+      "from": "point_5",
+      "to": "point_6"
+    },
+    {
+      "from": "point_6",
+      "to": "point_7"
+    },
+    {
+      "from": "point_7",
+      "to": "point_8"
+    },
+    {
+      "from": "point_7",
+      "to": "point_9"
+    },
+    {
+      "from": "point_8",
+      "to": "point_10"
+    },
+    {
+      "from": "point_10",
+      "to": "point_11"
+    },
+    {
+      "from": "point_11",
+      "to": "point_12"
+    },
+    {
+      "from": "point_12",
+      "to": "point_13"
+    },
+    {
+      "from": "point_8",
+      "to": "point_17"
+    },
+    {
+      "from": "point_17",
+      "to": "point_15"
+    },
+    {
+      "from": "entree_imagerie",
+      "to": "point_15"
+    },
+    {
+      "from": "point_15",
+      "to": "point_18"
+    },
+    {
+      "from": "point_18",
+      "to": "point_16"
+    },
+    {
+      "from": "point_15",
+      "to": "point_14"
+    },
+    {
+      "from": "entree_imagerie",
+      "to": "point_19"
+    },
+    {
+      "from": "point_19",
+      "to": "point_20"
+    },
+    {
+      "from": "point_13",
+      "to": "entree_module_1"
+    },
+    {
+      "from": "point_20",
+      "to": "entree_module_2"
+    }
+  ],
   "meta": {
     "planW": 577,
     "planH": 623,
-    "scale_m_per_unit": 0.0664845169637806
+    "scale_m_per_unit": 0.15364425591947514
   }
 }
