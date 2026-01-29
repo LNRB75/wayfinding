@@ -12,7 +12,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
-  <!-- ✅ CHARGEMENT CSS -->
+  <!-- ✅ CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -90,6 +90,7 @@
             <!-- ✅ Conteneur commun plan + SVG -->
             <div id="camera">
               <div id="plan-image"></div>
+
               <svg id="scene" aria-label="Plan interactif">
                 <g id="edges-layer"></g>
                 <g id="path-layer"></g>
@@ -105,10 +106,10 @@
     </main>
   </div>
 
-  <!-- ✅ CHARGEMENT JS -->
+  <!-- ✅ JS (mis en bas donc OK même sans defer) -->
   <script src="js/app.js"></script>
 
-  <!-- ✅ Service Worker -->
+  <!-- ✅ Service Worker (ne fonctionne pas en file://, normal) -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
