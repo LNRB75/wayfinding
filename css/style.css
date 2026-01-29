@@ -20,7 +20,19 @@ button.danger{color:#b00;background:#fff7f7;border-color:#e3baba}
 /* ✅ chemin correct depuis le fichier CSS vers /assets */
 #plan-container{position:relative;width:min(1400px,95vw);max-width:100%}
 #viewport{position:relative}
-#plan-image { display: none !important; }
+#plan-image{
+  background-image:url("../assets/plan.png");
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:top left;
+
+  /* ✅ AJOUTS POUR FORCER L’AFFICHAGE */
+  min-height: 600px;         /* force une hauteur visible */
+  display: block;            /* évite qu’un héritage display:none bloque */
+  background-color: #fff;    /* pour voir la zone, même sans image */
+  outline: 1px dashed #aaa;  /* cadre de debug (tu pourras le retirer) */
+
+}
 
 /* ✅ Conteneur commun qui recevra le transform (zoom/pan) */
 #camera {
