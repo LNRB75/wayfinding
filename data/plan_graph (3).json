@@ -1,0 +1,367 @@
+{
+  "nodes": [
+    {
+      "id": "point_1",
+      "name": "point_1",
+      "x": 49,
+      "y": 262
+    },
+    {
+      "id": "point_2",
+      "name": "point_2",
+      "x": 135,
+      "y": 283
+    },
+    {
+      "id": "point_3",
+      "name": "point_3",
+      "x": 155,
+      "y": 296
+    },
+    {
+      "id": "point_4",
+      "name": "point_4",
+      "x": 160,
+      "y": 272
+    },
+    {
+      "id": "point_5",
+      "name": "point_5",
+      "x": 150,
+      "y": 322
+    },
+    {
+      "id": "point_6",
+      "name": "point_6",
+      "x": 197,
+      "y": 314
+    },
+    {
+      "id": "point_7",
+      "name": "point_7",
+      "x": 197,
+      "y": 454
+    },
+    {
+      "id": "point_8",
+      "name": "point_8",
+      "x": 236,
+      "y": 452
+    },
+    {
+      "id": "point_9",
+      "name": "point_9",
+      "x": 196,
+      "y": 530
+    },
+    {
+      "id": "point_10",
+      "name": "point_10",
+      "x": 235,
+      "y": 539
+    },
+    {
+      "id": "point_11",
+      "name": "point_11",
+      "x": 296,
+      "y": 539
+    },
+    {
+      "id": "point_12",
+      "name": "point_12",
+      "x": 297,
+      "y": 567
+    },
+    {
+      "id": "point_13",
+      "name": "point_13",
+      "x": 379,
+      "y": 566
+    },
+    {
+      "id": "point_14",
+      "name": "point_14",
+      "x": 298,
+      "y": 362
+    },
+    {
+      "id": "point_15",
+      "name": "point_15",
+      "x": 296,
+      "y": 303
+    },
+    {
+      "id": "point_16",
+      "name": "point_16",
+      "x": 331,
+      "y": 323
+    },
+    {
+      "id": "point_17",
+      "name": "point_17",
+      "x": 234,
+      "y": 294
+    },
+    {
+      "id": "point_18",
+      "name": "point_18",
+      "x": 333,
+      "y": 294
+    },
+    {
+      "id": "point_19",
+      "name": "point_19",
+      "x": 304,
+      "y": 258
+    },
+    {
+      "id": "point_20",
+      "name": "point_20",
+      "x": 307,
+      "y": 219
+    },
+    {
+      "id": "bureau_cbc",
+      "name": "Bureau CBC",
+      "x": 51,
+      "y": 229
+    },
+    {
+      "id": "entree_principale",
+      "name": "Entrée principale",
+      "x": 17,
+      "y": 276
+    },
+    {
+      "id": "acces_etages",
+      "name": "Acces etages",
+      "x": 137,
+      "y": 260
+    },
+    {
+      "id": "entree_imagerie",
+      "name": "Entree imagerie",
+      "x": 292,
+      "y": 279
+    },
+    {
+      "id": "entree_module_2",
+      "name": "Entree module 2",
+      "x": 408,
+      "y": 215
+    },
+    {
+      "id": "entree_module_1",
+      "name": "Entrée module 1",
+      "x": 390,
+      "y": 546
+    },
+    {
+      "id": "acces_infra",
+      "name": "Acces infra",
+      "x": 144,
+      "y": 238
+    },
+    {
+      "id": "point_28",
+      "name": "point_28",
+      "x": 237,
+      "y": 130
+    },
+    {
+      "id": "point_29",
+      "name": "point_29",
+      "x": 135,
+      "y": 156
+    },
+    {
+      "id": "point_30",
+      "name": "point_30",
+      "x": 168,
+      "y": 191
+    },
+    {
+      "id": "point_31",
+      "name": "point_31",
+      "x": 137,
+      "y": 192
+    },
+    {
+      "id": "point_32",
+      "name": "point_32",
+      "x": 233,
+      "y": 160
+    },
+    {
+      "id": "entree_salle_prepa_patients",
+      "name": "Entrée salle prépa patients",
+      "x": 252,
+      "y": 147
+    },
+    {
+      "id": "entree_hall_module_4",
+      "name": "Entrée hall module 4",
+      "x": 305,
+      "y": 165
+    },
+    {
+      "id": "entree_bop_2",
+      "name": "Entrée Bop 2",
+      "x": 361,
+      "y": 311
+    },
+    {
+      "id": "lifts",
+      "name": "Lifts",
+      "x": 264,
+      "y": 280
+    },
+    {
+      "id": "escalier_5",
+      "name": "Escalier 5",
+      "x": 310,
+      "y": 338
+    },
+    {
+      "id": "point_38",
+      "name": "point_38",
+      "x": 285,
+      "y": 339
+    }
+  ],
+  "edges": [
+    {
+      "from": "entree_principale",
+      "to": "point_1"
+    },
+    {
+      "from": "point_1",
+      "to": "bureau_cbc"
+    },
+    {
+      "from": "point_1",
+      "to": "point_2"
+    },
+    {
+      "from": "point_2",
+      "to": "acces_etages"
+    },
+    {
+      "from": "point_2",
+      "to": "point_3"
+    },
+    {
+      "from": "point_3",
+      "to": "point_5"
+    },
+    {
+      "from": "point_5",
+      "to": "point_6"
+    },
+    {
+      "from": "point_6",
+      "to": "point_7"
+    },
+    {
+      "from": "point_7",
+      "to": "point_8"
+    },
+    {
+      "from": "point_7",
+      "to": "point_9"
+    },
+    {
+      "from": "point_8",
+      "to": "point_10"
+    },
+    {
+      "from": "point_10",
+      "to": "point_11"
+    },
+    {
+      "from": "point_11",
+      "to": "point_12"
+    },
+    {
+      "from": "point_12",
+      "to": "point_13"
+    },
+    {
+      "from": "point_8",
+      "to": "point_17"
+    },
+    {
+      "from": "point_17",
+      "to": "point_15"
+    },
+    {
+      "from": "entree_imagerie",
+      "to": "point_15"
+    },
+    {
+      "from": "point_15",
+      "to": "point_18"
+    },
+    {
+      "from": "point_18",
+      "to": "point_16"
+    },
+    {
+      "from": "point_15",
+      "to": "point_14"
+    },
+    {
+      "from": "entree_imagerie",
+      "to": "point_19"
+    },
+    {
+      "from": "point_19",
+      "to": "point_20"
+    },
+    {
+      "from": "point_13",
+      "to": "entree_module_1"
+    },
+    {
+      "from": "point_20",
+      "to": "entree_module_2"
+    },
+    {
+      "from": "point_20",
+      "to": "entree_hall_module_4"
+    },
+    {
+      "from": "point_4",
+      "to": "acces_infra"
+    },
+    {
+      "from": "point_4",
+      "to": "point_30"
+    },
+    {
+      "from": "point_30",
+      "to": "point_31"
+    },
+    {
+      "from": "point_31",
+      "to": "point_29"
+    },
+    {
+      "from": "point_29",
+      "to": "point_28"
+    },
+    {
+      "from": "entree_salle_prepa_patients",
+      "to": "point_32"
+    },
+    {
+      "from": "point_32",
+      "to": "point_28"
+    }
+  ],
+  "meta": {
+    "planW": 577,
+    "planH": 623,
+    "scale_m_per_unit": 0.15364425591947514
+  }
+}
