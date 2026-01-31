@@ -155,6 +155,78 @@
       "name": "Entrée module 1",
       "x": 390,
       "y": 546
+    },
+    {
+      "id": "acces_infra",
+      "name": "Acces infra",
+      "x": 144,
+      "y": 238
+    },
+    {
+      "id": "point_28",
+      "name": "point_28",
+      "x": 237,
+      "y": 130
+    },
+    {
+      "id": "point_29",
+      "name": "point_29",
+      "x": 135,
+      "y": 156
+    },
+    {
+      "id": "point_30",
+      "name": "point_30",
+      "x": 168,
+      "y": 191
+    },
+    {
+      "id": "point_31",
+      "name": "point_31",
+      "x": 137,
+      "y": 192
+    },
+    {
+      "id": "point_32",
+      "name": "point_32",
+      "x": 233,
+      "y": 160
+    },
+    {
+      "id": "entree_salle_prepa_patients",
+      "name": "Entrée salle prépa patients",
+      "x": 252,
+      "y": 147
+    },
+    {
+      "id": "entree_hall_module_4",
+      "name": "Entrée hall module 4",
+      "x": 305,
+      "y": 165
+    },
+    {
+      "id": "entree_bop_2",
+      "name": "Entrée Bop 2",
+      "x": 361,
+      "y": 311
+    },
+    {
+      "id": "lifts",
+      "name": "Lifts",
+      "x": 264,
+      "y": 280
+    },
+    {
+      "id": "escalier_5",
+      "name": "Escalier 5",
+      "x": 310,
+      "y": 338
+    },
+    {
+      "id": "point_38",
+      "name": "point_38",
+      "x": 285,
+      "y": 339
     }
   ],
   "edges": [
@@ -253,6 +325,38 @@
     {
       "from": "point_20",
       "to": "entree_module_2"
+    },
+    {
+      "from": "point_20",
+      "to": "entree_hall_module_4"
+    },
+    {
+      "from": "point_4",
+      "to": "acces_infra"
+    },
+    {
+      "from": "point_4",
+      "to": "point_30"
+    },
+    {
+      "from": "point_30",
+      "to": "point_31"
+    },
+    {
+      "from": "point_31",
+      "to": "point_29"
+    },
+    {
+      "from": "point_29",
+      "to": "point_28"
+    },
+    {
+      "from": "entree_salle_prepa_patients",
+      "to": "point_32"
+    },
+    {
+      "from": "point_32",
+      "to": "point_28"
     }
   ],
   "meta": {
