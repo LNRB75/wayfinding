@@ -335,6 +335,33 @@ btnDeleteLastPoint.onclick = () => {
   drawPoints(); drawEdges(); refreshSelectOptions();
 };
 
+// === Bouton : supprimer le point sélectionné ===
+document.getElementById('deleteSelectedPoint').onclick = () => {
+    if (!editMode) return alert("Passe en mode ÉDITION.");
+    deletePoint(selectedPointId);
+};
+
+
+// === Suppression d’un point sélectionné ===
+function deletePoint(id) {
+    if (!id) return alert("Aucun point sélectionné.");
+
+    // 1. Supprimer les segments associés
+    edges = edges.filter(e => e.from !== id && e.to !== id);
+
+    // 2. Supprimer le point
+    nodes = nodes.filter(n => n.id !== id);
+
+    // 3. Réinitialisation de la sélection
+    if (selectedPointId === id) {
+        selectedPointId = null;
+    }
+
+    drawPoints();
+    drawEdges();
+    refreshSelectOptions();
+}
+
 // === Sélecteurs POI ===
 function refreshSelectOptions(){
   [startSelect, endSelect].forEach(sel => {
