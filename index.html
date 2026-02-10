@@ -3,17 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <title>Application plan — Navigation intérieure</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0b5fff" />
-
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="assets/icons/icon-180.png" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-
-  <!-- ✅ CSS -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* DEBUG plan image */
+    #plan-image {
+      min-height: 70vh;
+      height: calc(100vh - 180px);
+      display: block;
+      background-color: #fff;
+      outline: 1px dashed #aaa;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top left;
+    }
+    #plan-container, #viewport { min-height: 70vh; }
+  </style>
 </head>
 
 <body>
@@ -21,13 +32,19 @@
     <h1>Navigation intérieure — bâtiment</h1>
     <div class="toolbar">
       <span id="modeBadge" class="mode-badge">Mode utilisation</span>
-      <button id="toggleModeBtn">Basculer en mode édition</button>
-      <div class="hint">Import auto de <code>data/plan_graph.json</code>.</div>
+
+      <!-- ✔️ Bouton unique -->
+      <button id="editModeBtn">Mode ÉDITION</button>
+
+      <div class="hint">
+        Ouvrez ce fichier dans Firefox. Import auto de <code>data/plan_graph.json</code>.
+      </div>
     </div>
   </header>
 
   <div class="app">
     <aside class="sidebar">
+
       <div class="card" id="route-panel">
         <h2>Itinéraire</h2>
         <div class="row">
@@ -45,35 +62,52 @@
         <ol id="routeSteps"></ol>
       </div>
 
-      <div class="card" id="scale-panel">
+      <!-- ✔️ Bloc Échelle (tout masqué en utilisation) -->
+      <div class="card edit-button" id="scale-panel">
         <h2>Échelle (distances réelles)</h2>
-        <div class="hint">Sélectionnez 2 points (Départ/Arrivée), entrez la distance, puis « Définir l’échelle ».</div>
-        <div class="row">
-          <input id="scaleDistance" type="number" min="0" step="0.01" placeholder="distance en mètres" />
-          <button id="defineScaleBtn">Définir l’échelle</button>
+
+        <div class="hint edit-button">
+          Sélectionnez 2 points, entrez la distance, puis "Définir l’échelle".
         </div>
-        <div id="scaleLabel">Échelle : —</div>
+
+        <div class="row edit-button">
+          <input id="scaleDistance" type="number" min="0" step="0.01" placeholder="distance en mètres">
+          <button id="defineScaleBtn" class="edit-button">Définir l’échelle</button>
+        </div>
+
+        <div id="scaleLabel" class="edit-button">Échelle : —</div>
       </div>
 
-      <div class="card" id="mode-panel">
+      <!-- ✔️ Bloc édition -->
+      <div class="card edit-button" id="mode-panel">
         <h2>Édition</h2>
-        <div class="hint">Ces actions sont actives uniquement en mode <b>Édition</b>.</div>
-        <div class="row">
-          <input id="poiName" type="text" placeholder="Nom du point" />
-          <button id="deleteLastPoint">Supprimer dernier point</button>
+
+        <div class="hint edit-button">
+          Ces actions sont actives uniquement en mode <b>Édition</b>.
         </div>
-        <div class="row">
-          <button id="toggleEdgeMode">Mode couloir</button>
-          <button id="toggleDeleteEdgeMode">Suppression couloir</button>
-          <button id="deleteLastEdge">Supprimer dernier couloir</button>
-          <button id="clearAllEdges" class="danger">Supprimer tous les couloirs</button>
+
+        <div class="row edit-button">
+          <input id="poiName" type="text" placeholder="Nom du point">
+          <button id="deleteLastPoint" class="edit-button">Supprimer dernier point</button>
         </div>
-        <div class="row">
-          <button id="exportJson">Exporter JSON</button>
-          <input id="importFile" type="file" accept=".json" />
-          <button id="importBtn">Importer</button>
+
+        <div class="row edit-button">
+          <button id="toggleEdgeMode" class="edit-button">Mode couloir</button>
+          <button id="toggleDeleteEdgeMode" class="edit-button">Suppression couloir</button>
+          <button id="deleteLastEdge" class="edit-button">Supprimer dernier couloir</button>
+          <button id="clearAllEdges" class="danger edit-button">Supprimer tous les couloirs</button>
+        </div>
+
+        <div class="row edit-button">
+          <button id="exportJson" class="edit-button">Exporter JSON</button>
+
+          <!-- input non masqué sinon on ne peut rien importer -->
+          <input id="importFile" type="file" accept=".json">
+
+          <button id="importBtn" class="edit-button">Importer</button>
         </div>
       </div>
+
     </aside>
 
     <main class="stage-wrap">
@@ -87,16 +121,13 @@
               <div class="label" id="zoomLabel">100%</div>
             </div>
 
-            <!-- ✅ Conteneur commun plan + SVG -->
             <div id="camera">
               <div id="plan-image"></div>
-
-              <svg id="scene" aria-label="Plan interactif">
+              <svg id="scene">
                 <g id="edges-layer"></g>
                 <g id="path-layer"></g>
                 <g id="points-layer"></g>
-                <line id="edge-highlight" class="edge-hover"
-                      x1="0" y1="0" x2="0" y2="0" style="display:none;"></line>
+                <line id="edge-highlight" class="edge-hover" style="display:none;" x1="0" y1="0" x2="0" y2="0"></line>
               </svg>
             </div>
 
@@ -106,17 +137,7 @@
     </main>
   </div>
 
-  <!-- ✅ JS (mis en bas donc OK même sans defer) -->
   <script src="js/app.js"></script>
 
-  <!-- ✅ Service Worker (ne fonctionne pas en file://, normal) -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-          .catch(err => console.error('SW registration failed:', err));
-      });
-    }
-  </script>
 </body>
 </html>
