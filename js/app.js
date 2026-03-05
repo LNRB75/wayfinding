@@ -249,7 +249,7 @@ svg.addEventListener('click', ev => {
   const name = raw || `point_${nodes.length+1}`;
   const {x,y} = clientToPlan(ev.clientX, ev.clientY);
   const id = uniqueIdFromName(name);
-  nodes.push({id,name,x,y});
+  nodes.push({id,name,x_rel: x/PLAN_W, y_rel: y/PLAN_H, x: x, y: y});
   poiNameInput.value = '';
   drawPoints();
   refreshSelectOptions();
@@ -687,6 +687,15 @@ function loadGraph(data){
   drawPath([]); 
   refreshSelectOptions(); 
   updateRoutePanel(null); 
+  
+  // compute pixel coords from rel
+  nodes = nodes.map(n=>{
+    if(n.x_rel!==undefined && n.y_rel!==undefined){
+      n.x = n.x_rel * PLAN_W;
+      n.y = n.y_rel * PLAN_H;
+    }
+    return n;
+  });
   initBackgroundDimensions();
 }
 
