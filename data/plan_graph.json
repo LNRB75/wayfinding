@@ -1,1 +1,91 @@
-{"nodes":[],"edges":[],"meta":{}}
+{
+  "nodes": [
+    {
+      "id": "point_1",
+      "name": "point_1",
+      "x_rel": null,
+      "y_rel": null,
+      "x": 137,
+      "y": 278
+    },
+    {
+      "id": "point_2",
+      "name": "point_2",
+      "x_rel": null,
+      "y_rel": null,
+      "x": 139,
+      "y": 179
+    },
+    {
+      "id": "point_3",
+      "name": "point_3",
+      "x_rel": null,
+      "y_rel": null,
+      "x": 227,
+      "y": 151
+    },
+    {
+      "id": "point_4",
+      "name": "point_4",
+      "x_rel": null,
+      "y_rel": null,
+      "x": 238,
+      "y": 190
+    },
+    {
+      "id": "point_5",
+      "name": "point_5",
+      "x_rel": null,
+      "y_rel": null,
+      "x": 275,
+      "y": 190
+    },
+    {
+      "id": "point_6",
+      "name": "point_6",
+      "x_rel": null,
+      "y_rel": null,
+      "x": 332,
+      "y": 122
+    },
+    {
+      "id": "point_7",
+      "name": "point_7",
+      "x_rel": null,
+      "y_rel": null,
+      "x": 258,
+      "y": 292
+    }
+  ],
+  "edges": [
+    {
+      "from": "point_1",
+      "to": "point_2"
+    },
+    {
+      "from": "point_2",
+      "to": "point_3"
+    },
+    {
+      "from": "point_3",
+      "to": "point_6"
+    },
+    {
+      "from": "point_3",
+      "to": "point_4"
+    },
+    {
+      "from": "point_4",
+      "to": "point_5"
+    },
+    {
+      "from": "point_5",
+      "to": "point_7"
+    }
+  ],
+  "meta": {
+    "planW": 0,
+    "planH": 0,
+    "scale_m_per_unit": null
+  }
+}
