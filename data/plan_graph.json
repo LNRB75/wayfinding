@@ -19,270 +19,98 @@
       "y": 546
     },
     {
-      "id": "bureaux_cbc",
-      "name": "Bureaux CBC",
-      "x": 31,
-      "y": 158
+      "id": "entree",
+      "name": "Entrée",
+      "x_rel": 0.0831889081455806,
+      "y_rel": 0.18138041733547353,
+      "x": 48,
+      "y": 113
     },
     {
-      "id": "entree_principale",
-      "name": "Entrée principale",
-      "x": 2,
-      "y": 166
+      "id": "bureaux_cbc",
+      "name": "Bureaux CBC",
+      "x_rel": 0.10051993067590988,
+      "y_rel": 0.14446227929373998,
+      "x": 58,
+      "y": 90
     },
     {
       "id": "etages",
       "name": "Etages",
-      "x": 85,
-      "y": 180
+      "x_rel": 0.16464471403812825,
+      "y_rel": 0.1653290529695024,
+      "x": 95,
+      "y": 103
     },
     {
-      "id": "sous_sol",
-      "name": "Sous-sol",
-      "x": 105,
-      "y": 167
+      "id": "salle_reveil",
+      "name": "Salle réveil",
+      "x_rel": 0.2755632582322357,
+      "y_rel": 0.3451043338683788,
+      "x": 159,
+      "y": 215
     },
     {
-      "id": "bureaux_cotraitants_moa",
-      "name": "Bureaux cotraitants / MOA",
-      "x": 101,
+      "id": "point_8",
+      "name": "point_8",
+      "x_rel": 0.1663778162911612,
+      "y_rel": 0.20385232744783308,
+      "x": 96,
+      "y": 127
+    },
+    {
+      "id": "point_9",
+      "name": "point_9",
+      "x_rel": 0.2027729636048527,
+      "y_rel": 0.21669341894060995,
+      "x": 117,
       "y": 135
     },
     {
-      "id": "bureaux_moe",
-      "name": "Bureaux MOE",
-      "x": 110,
-      "y": 210
-    },
-    {
-      "id": "salles_de_naissance",
-      "name": "Salles de naissance",
-      "x": 192,
-      "y": 356
-    },
-    {
-      "id": "salle_de_reveil",
-      "name": "Salle de réveil",
-      "x": 184,
-      "y": 325
-    },
-    {
-      "id": "blocs_hall_module_1",
-      "name": "Blocs hall module 1",
-      "x": 243,
-      "y": 340
-    },
-    {
-      "id": "blocs_halls_modules_2_et_3",
-      "name": "Blocs halls modules 2 et 3",
-      "x": 260,
-      "y": 136
-    },
-    {
-      "id": "bop_et_lifts",
-      "name": "BOP et lifts",
-      "x": 228,
-      "y": 198
-    },
-    {
-      "id": "imagerie",
-      "name": "Imagerie",
-      "x": 186,
-      "y": 167
-    },
-    {
-      "id": "vestiaires",
-      "name": "Vestiaires",
-      "x": 185,
-      "y": 230
-    },
-    {
-      "id": "blocs_hall_module_4",
-      "name": "Blocs hall module 4",
-      "x": 194,
-      "y": 104
-    },
-    {
-      "id": "salle_prepa_patients",
-      "name": "Salle prépa patients",
-      "x": 158,
-      "y": 91
-    },
-    {
-      "id": "p1",
-      "name": "P1",
-      "x": 30,
+      "id": "point_10",
+      "name": "point_10",
+      "x_rel": 0.2045060658578856,
+      "y_rel": 0.2969502407704655,
+      "x": 118,
       "y": 185
     },
     {
-      "id": "p2",
-      "name": "P2",
-      "x": 128,
-      "y": 193
-    },
-    {
-      "id": "p3",
-      "name": "P3",
-      "x": 146,
-      "y": 180
-    },
-    {
-      "id": "p4",
-      "name": "P4",
-      "x": 146,
-      "y": 206
-    },
-    {
-      "id": "p5",
-      "name": "P5",
-      "x": 153,
-      "y": 286
-    },
-    {
-      "id": "p6",
-      "name": "P6",
-      "x": 120,
-      "y": 284
-    },
-    {
-      "id": "p7",
-      "name": "P7",
-      "x": 149,
-      "y": 341
-    },
-    {
-      "id": "p8",
-      "name": "P8",
-      "x": 187,
-      "y": 193
-    },
-    {
-      "id": "lifts",
-      "name": "Lifts",
-      "x": 208,
-      "y": 180
-    },
-    {
-      "id": "p9",
-      "name": "P9",
-      "x": 70,
-      "y": 201
-    },
-    {
-      "id": "p10",
-      "name": "P10",
-      "x": 200,
-      "y": 146
+      "id": "point_11",
+      "name": "point_11",
+      "x_rel": 0.22876949740034663,
+      "y_rel": 0.33226324237560195,
+      "x": 132,
+      "y": 207
     }
   ],
   "edges": [
     {
-      "from": "point_13",
-      "to": "entree_module_1"
-    },
-    {
-      "from": "entree_principale",
+      "from": "entree",
       "to": "bureaux_cbc"
     },
     {
-      "from": "entree_principale",
-      "to": "p1"
+      "from": "entree",
+      "to": "point_8"
     },
     {
-      "from": "p1",
-      "to": "sous_sol"
-    },
-    {
-      "from": "p1",
-      "to": "p9"
-    },
-    {
-      "from": "p9",
-      "to": "bureaux_moe"
-    },
-    {
-      "from": "p9",
-      "to": "sous_sol"
-    },
-    {
-      "from": "p9",
+      "from": "entree",
       "to": "etages"
     },
     {
-      "from": "p9",
-      "to": "bureaux_cotraitants_moa"
+      "from": "point_9",
+      "to": "point_8"
     },
     {
-      "from": "p9",
-      "to": "p4"
+      "from": "point_9",
+      "to": "point_10"
     },
     {
-      "from": "p4",
-      "to": "p3"
+      "from": "point_10",
+      "to": "point_11"
     },
     {
-      "from": "p9",
-      "to": "p3"
-    },
-    {
-      "from": "bureaux_moe",
-      "to": "p6"
-    },
-    {
-      "from": "p6",
-      "to": "p5"
-    },
-    {
-      "from": "p5",
-      "to": "p7"
-    },
-    {
-      "from": "p7",
-      "to": "salle_de_reveil"
-    },
-    {
-      "from": "p7",
-      "to": "salles_de_naissance"
-    },
-    {
-      "from": "salles_de_naissance",
-      "to": "blocs_hall_module_1"
-    },
-    {
-      "from": "p3",
-      "to": "lifts"
-    },
-    {
-      "from": "p3",
-      "to": "p8"
-    },
-    {
-      "from": "p8",
-      "to": "imagerie"
-    },
-    {
-      "from": "p8",
-      "to": "bop_et_lifts"
-    },
-    {
-      "from": "p8",
-      "to": "vestiaires"
-    },
-    {
-      "from": "imagerie",
-      "to": "blocs_hall_module_4"
-    },
-    {
-      "from": "bureaux_cotraitants_moa",
-      "to": "salle_prepa_patients"
-    },
-    {
-      "from": "imagerie",
-      "to": "p10"
-    },
-    {
-      "from": "p10",
-      "to": "blocs_halls_modules_2_et_3"
+      "from": "point_11",
+      "to": "salle_reveil"
     }
   ],
   "meta": {
