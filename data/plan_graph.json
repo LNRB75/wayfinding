@@ -51,36 +51,94 @@
       "y": 215
     },
     {
-      "id": "point_8",
-      "name": "point_8",
-      "x_rel": 0.1663778162911612,
-      "y_rel": 0.20385232744783308,
-      "x": 96,
-      "y": 127
+      "id": "lifts",
+      "name": "Lifts",
+      "x": 176,
+      "y": 116
     },
     {
-      "id": "point_9",
-      "name": "point_9",
-      "x_rel": 0.2027729636048527,
-      "y_rel": 0.21669341894060995,
-      "x": 117,
-      "y": 135
+      "id": "imagerie",
+      "name": "Imagerie",
+      "x": 158,
+      "y": 105
     },
     {
-      "id": "point_10",
-      "name": "point_10",
-      "x_rel": 0.2045060658578856,
-      "y_rel": 0.2969502407704655,
-      "x": 118,
-      "y": 185
+      "id": "blocs_4",
+      "name": "Blocs 4",
+      "x": 133,
+      "y": 49
     },
     {
-      "id": "point_11",
-      "name": "point_11",
-      "x_rel": 0.22876949740034663,
-      "y_rel": 0.33226324237560195,
-      "x": 132,
-      "y": 207
+      "id": "blocs_1",
+      "name": "Blocs 1",
+      "x": 194,
+      "y": 230
+    },
+    {
+      "id": "blocs_2_3",
+      "name": "Blocs 2&3",
+      "x": 213,
+      "y": 42
+    },
+    {
+      "id": "point_18",
+      "name": "point_18",
+      "x": 57,
+      "y": 65
+    },
+    {
+      "id": "1",
+      "name": "1",
+      "x": 131,
+      "y": 119
+    },
+    {
+      "id": "2",
+      "name": "2",
+      "x": 95,
+      "y": 126
+    },
+    {
+      "id": "3",
+      "name": "3",
+      "x": 115,
+      "y": 133
+    },
+    {
+      "id": "4",
+      "name": "4",
+      "x": 114,
+      "y": 197
+    },
+    {
+      "id": "5",
+      "name": "5",
+      "x": 134,
+      "y": 197
+    },
+    {
+      "id": "6",
+      "name": "6",
+      "x": 134,
+      "y": 219
+    },
+    {
+      "id": "7",
+      "name": "7",
+      "x": 157,
+      "y": 122
+    },
+    {
+      "id": "8",
+      "name": "8",
+      "x": 162,
+      "y": 66
+    },
+    {
+      "id": "naissances",
+      "name": "Naissances",
+      "x": 158,
+      "y": 236
     }
   ],
   "edges": [
@@ -90,27 +148,79 @@
     },
     {
       "from": "entree",
-      "to": "point_8"
-    },
-    {
-      "from": "entree",
       "to": "etages"
     },
     {
-      "from": "point_9",
-      "to": "point_8"
+      "from": "bureaux_cbc",
+      "to": "point_18"
     },
     {
-      "from": "point_9",
-      "to": "point_10"
+      "from": "point_18",
+      "to": "blocs_4"
     },
     {
-      "from": "point_10",
-      "to": "point_11"
+      "from": "2",
+      "to": "3"
+    },
+    {
+      "from": "3",
+      "to": "1"
+    },
+    {
+      "from": "3",
+      "to": "4"
     },
     {
       "from": "point_11",
+      "to": "4"
+    },
+    {
+      "from": "4",
+      "to": "5"
+    },
+    {
+      "from": "5",
+      "to": "6"
+    },
+    {
+      "from": "6",
       "to": "salle_reveil"
+    },
+    {
+      "from": "point_17",
+      "to": "1"
+    },
+    {
+      "from": "1",
+      "to": "7"
+    },
+    {
+      "from": "7",
+      "to": "imagerie"
+    },
+    {
+      "from": "7",
+      "to": "lifts"
+    },
+    {
+      "from": "imagerie",
+      "to": "8"
+    },
+    {
+      "from": "8",
+      "to": "blocs_2_3"
+    },
+    {
+      "from": "naissances",
+      "to": "salle_reveil"
+    },
+    {
+      "from": "blocs_1",
+      "to": "naissances"
+    },
+    {
+      "from": "entree",
+      "to": "2"
     }
   ],
   "meta": {
